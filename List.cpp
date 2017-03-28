@@ -1,7 +1,7 @@
 #ifndef List_cpp
 #define List_cpp
 
-#include "List.h"
+#include "list.h"
 
 
 //***************
@@ -21,6 +21,7 @@ List::List(int v)
     size = 1;
     a->ID=++IdElem;
     IdElem=0;
+    vCopy=v;
 }//List::List(int v)
 
 //Wstawia nowy element do listy dwukierunkowej
@@ -64,6 +65,24 @@ List::Pointer List::showCurrent(Pointer it)
     //return it;
 }//List::Pointer List::showCurrent(Pointer it)
 //--pokaz--obecny--
+
+//--skopiuj--obecny--
+List::Pointer List::copy(Pointer it)
+{
+    vCopy=it.wsk->value;
+    //return it;
+}//List::Pointer List::copy(Pointer it)
+//--skopiuj--obecny--
+
+
+//--wklej--obecny--
+List::Pointer List::paste(Pointer it)
+{
+    list1.insertList(it,vCopy);
+    it = it.next(it);
+    //return it;
+}//List::Pointer List::paste(Pointer it)
+//--wklej--obecny--
 
 
 //Zwraca head listy dwukierunkowej

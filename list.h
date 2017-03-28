@@ -1,5 +1,5 @@
-#ifndef List_h
-#define List_h
+#ifndef list_h
+#define list_h
 
 #include<iostream>
 #include<cstdio>
@@ -31,11 +31,13 @@ class List
     Pointer insertList(Pointer it, int v);
     Pointer deleteList(Pointer &it);
     Pointer showCurrent(Pointer it);
+    Pointer copy(Pointer it);
+    Pointer paste(Pointer it);
     Pointer begin();
     Pointer end();
     Pointer getID(int v);
     Pointer getVal(int v);
-    int size, IdElem;
+    int size, IdElem, vCopy;
 };
 //uwtorz liste z elementem o wartosci 10
     List list1(10);
@@ -45,4 +47,4 @@ class List
 
 void initialise ();
 
-#endif List_h
+#endif list_h
