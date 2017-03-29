@@ -39,7 +39,7 @@ class List
     Pointer getVal(int v);
     int size, IdElem, vCopy;
 };
-//uwtorz liste z elementem o wartosci 10
+//uwtorz globaln¹ liste z elementem o wartosci 10
     List list1(10);
 
 //pobierz wskaznik na pierwszy element listy

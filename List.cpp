@@ -37,7 +37,7 @@ List::Pointer List::insertList(Pointer it, int v)
     b->ID = ++IdElem;
     c->prev = b;
     a->next = b;
-    if(b->next == b)tail.wsk = b; //popraw tail listy, jezeli dodajemy za ostatnim elementem
+    if(b->next == b)tail.wsk = b; //uaktualnij tail listy, jezeli dodajemy za ostatnim elementem
     size++;
     return it;
 }//List::Pointer List::insertList(Pointer it, int v)
@@ -50,8 +50,8 @@ List::Pointer List::deleteList(Pointer &it)
     Node * c = b->next;
     a->next = c;
     c->prev = a;
-    if(head.wsk == b) head.wsk = c; //popraw head listy, jezeli usuwamy pierwszy element
-    if(tail.wsk == b) tail.wsk = a;     //popraw tail listy, jezeli usuwamy ostatni element
+    if(head.wsk == b) head.wsk = c; //uaktualnij head listy, jezeli usuwamy pierwszy element
+    if(tail.wsk == b) tail.wsk = a;     //uaktualnij tail listy, jezeli usuwamy ostatni element
     it.wsk = a;
     delete b;
     size--;
@@ -160,8 +160,9 @@ List::Pointer List::getVal(int v)
 //initialise listê
 void initialise ()
 {
-//wstaw element 202, za pierwszym elementem
+//wstaw element 20, za pierwszym elementem
     list1.insertList(it,20);
+//przesun wskazink na kolejne miejsce
     it = it.next(it);
     list1.insertList(it,30);
     it = it.next(it);
@@ -176,19 +177,17 @@ void initialise ()
     list1.insertList(it,80);
     it = it.next(it);
     list1.insertList(it,90);
-//przesun Pointer na kolejny element
     it = it.next(it);
 
-//wstaw element o wartosci 8, za elementem o wartosci 404
+
     list1.insertList(it,8);
 
     it = it.next(it);
-//wstaw element o wartosci 12, za elementem o wartosci 8
     list1.insertList(it,12);
 
 
     cout << "\n";
-}//initialise listê
+}//initialise liste
 
 
 #endif List_cpp

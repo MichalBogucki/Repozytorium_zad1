@@ -11,7 +11,7 @@ int main()
     cout << "\n";
     list1.display();
     cout << "\n-----------menu-------------\n";
-    cout << "\t 0. Lewy poczatek"<< endl;
+    cout << "\t 0. Lewy poczatek "<< endl;
     cout << "\t 10. Wybierz element po ID"<< endl;
     cout << "\t 11. Wybierz element po Wartosci"<< endl;
     cout << "\t 2. Stworz element"<< endl;
